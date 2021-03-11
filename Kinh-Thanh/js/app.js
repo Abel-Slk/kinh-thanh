@@ -143,6 +143,18 @@ function body_lock_add(delay) {
 		}, delay);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+// the rest from the starter
+
 //=================
 // LettersAnimation
 let title = document.querySelectorAll('._letter-animation');
