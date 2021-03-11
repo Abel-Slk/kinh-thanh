@@ -1,0 +1,122 @@
+footer{}
+//====================================================================================================
+.footer {
+	background-color: #222;
+
+	padding: 45px 0 25px 0;
+	position: relative;
+	z-index: 5;
+}
+.footer__body {
+	text-align: center;
+}
+.footer__row {
+	display: flex;
+	justify-content: center;
+	// align-items: center;
+
+	margin: 0px 0px 20px 0px;
+	@media (max-width: $md2+px) {
+		margin: 0px 0px 40px 0px;
+		justify-content: space-between;
+	}
+	@media (max-width: $md3+px) {
+		flex-direction: column;
+	}
+}
+.footer__column {
+	flex: 0 1 33.333%;
+	@media (max-width: $md2+px) {
+		&:nth-child(1) {
+			flex: 0 1 40%;
+		}
+		&:nth-child(3) {
+			display: none;
+		}
+	}
+}
+.footer__title {
+	font-size: 20px;
+	color: #fff;
+	margin: 0px 0px 30px 0px;
+}
+.footer__contacts {
+	text-align: left;
+	margin: 0px 0px 0px 50px;
+	li {
+		margin: 0px 0px 20px 0px;
+		&:last-child {
+			margin: 0;
+		}
+	}
+	@media (max-width: $md1+px) {
+		margin: 0px 0px 0px 20px;
+	}
+	@media (max-width: $md2+px) {
+		margin: 0px 0px 0px 0px;
+	}
+	@media (max-width: $md3+px) {
+		text-align: center;
+		margin: 0px 0px 60px 0px;
+	}
+}
+.footer__contact-link {
+	color: $pale-yellow;
+	text-shadow: $pale-yellow 0 0 5px;
+
+	font-size: 16px;
+	&:hover {
+		color: #fcd58b;
+	}
+
+	padding: 0px 0px 0px 30px;
+	&_1 {
+		background: url("../img/footer/torii-gate-solid.svg") 0 0 / 16px no-repeat;
+	}
+	&_2 {
+		background: url("../img/footer/phone-solid.svg") 0 0 / 16px no-repeat;
+	}
+	&_3 {
+		background: url("../img/footer/envelope-solid.svg") 0 0 / 16px no-repeat;
+	}
+}
+.footer__link {
+	color: $pale-yellow;
+	font-size: 16px;
+	&:hover {
+		color: #fcd58b;
+	}
+}
+.footer__logo {
+	img {
+		max-width: 180px;
+	}
+	@media (max-width: $md2+px) {
+		img {
+			max-width: 150px;
+		}
+	}
+}
+.footer__menu {
+}
+.footer__list {
+	li {
+		margin: 0px 0px 10px 0px;
+		&:last-child {
+			margin: 0;
+		}
+	}
+}
+.footer__text {
+	font-size: 16px;
+	color: #bbb;
+	margin: 0px 0px 20px 0px;
+	&:last-child {
+		margin: 0;
+	}
+	span {
+		color: #fff;
+	}
+}
+//====================================================================================================
+

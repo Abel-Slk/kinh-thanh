@@ -1,0 +1,107 @@
+
+.btn {
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+
+	padding: 0px 42px;
+
+	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+	border-radius: 28px;
+	overflow: hidden; // при анимации :after скроет углы
+
+	text-transform: uppercase;
+	font-size: 13px;
+	letter-spacing: 0.67px;
+
+	@media (max-width: $md4+px) {
+		padding: 0px 30px;
+		height: 40px;
+		line-height: 40px;
+	}
+
+	position: relative;
+	&:after {
+		// анимация
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		transform: scale(0);
+		transition: all 0.2s ease 0s;
+	}
+	&_b {
+		color: #fff;
+		background-color: $gray;
+		&:after {
+			background-color: #000;
+		}
+	}
+	&_y {
+		color: $yellow;
+		color: $pale-yellow;
+
+		border: 1px solid $yellow;
+		border: 1px solid $pale-yellow;
+		background-color: transparent;
+
+		padding: 0px 30px;
+
+		&:after {
+			background-color: $red;
+		}
+
+		@media (max-width: $md4+px) {
+			padding: 0px 20px;
+		}
+	}
+	&_yandex {
+		height: 80px;
+		padding: 10px 20px;
+		border-radius: 48px;
+
+		display: flex;
+		align-items: center;
+
+		background-color: $yellow;
+		&:after {
+			background-color: $pale-yellow;
+			transition: none;
+		}
+	}
+	&_delivery {
+		height: 80px;
+		padding: 30px 30px 20px 30px;
+		border-radius: 48px;
+
+		display: flex;
+		align-items: center;
+
+		background-color: #8bc34a;
+		&:after {
+			background-color: #b3fa61;
+			transition: none;
+		}
+	}
+
+	span {
+		transition: all 0.3s ease 0s;
+		position: relative;
+		z-index: 1;
+	}
+	&:hover {
+		&.btn_y {
+			// color: #fff;
+		}
+		// &.btn_b{
+		//     color: #fff;
+		// }
+		&:after {
+			transform: scale(1);
+		}
+	}
+}
+
+
