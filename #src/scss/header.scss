@@ -94,6 +94,12 @@
 		color: $pale-yellow-lighter;
 		text-shadow: $yellow 0px 0px 6px;
 	}
+	@media (min-width: 768px){ // выделение активного раздела - только для десктопной версии
+		&._active{
+			color: $pale-yellow-lighter;
+			text-shadow: $yellow 0px 0px 6px;
+		}
+	}
 }
 
 .header__mobile-menu-logo{

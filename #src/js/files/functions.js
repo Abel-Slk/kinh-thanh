@@ -140,8 +140,58 @@ function body_lock_add(delay) {
 	}
 }
 
+// Filtering
+let filterItems = document.querySelectorAll(".filter__item");
+let portfolioColumns = document.querySelectorAll(".portfolio__column");
+// * initially
+filterItems[0].classList.add('_active');
+for (let ind = 0; ind < portfolioColumns.length; ind++) {
+	portfolioColumns[ind].classList.add('_active'); // всем добавить
+}
+// * then filter
+for (let index = 0; index < filterItems.length; index++) {
+	filterItems[index].addEventListener('click', function (e) {
+		let i = this.dataset.filter; // filterItem that we clicked on
+		console.log(i);
+	
+		if (i == 1) {
+			for (let ind = 0; ind < portfolioColumns.length; ind++) {
+				portfolioColumns[ind].classList.add('_active'); // всем добавить
+			}
+			
+		}
+		else {
+			let filtered = document.querySelectorAll('.portfolio__column.f_' + i);
+			for (let ind = 0; ind < portfolioColumns.length; ind++) {
+				portfolioColumns[ind].classList.remove('_active'); // у всех убрать
+			}
+			for (let ind = 0; ind < filtered.length; ind++) {
+				filtered[ind].classList.add('_active'); 
+			}
+		}
+
+		for (let index = 0; index < filterItems.length; index++) {
+			filterItems[index].classList.remove('_active'); // make sure no one has
+			this.classList.add('_active'); // добавить одному
+		}
+	});
+}
 
 
+
+
+function showYaMaps() {
+	let ifr = document.createElement("iframe");
+	ifr.src = "https://yandex.ru/map-widget/v1/?um=constructor%3A6bbfd63bba83566668f19b460cc11cc9ea50d891633d1bae28e7cc69b20d4a02&amp;source=constructor";
+	ifr.width = "600";
+	ifr.height = "340";
+	ifr.frameborder = "0";
+
+	document.getElementById("YaMaps").appendChild(ifr);
+}
+setTimeout(function () {
+	showYaMaps();
+}, 3000);
 
 
 
