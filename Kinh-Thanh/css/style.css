@@ -345,6 +345,84 @@ body.ie ._ibg img {
   background: url("../img/icons/loading.gif") center/50px no-repeat;
 }
 
+.slider.slick-slider {
+  position: relative;
+}
+
+.slider.slick-slider .slick-track,
+.slider.slick-slider .slick-list {
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slider.slick-slider .slick-list {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider.slick-slider .slick-track {
+  position: relative;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.slider.slick-slider .slick-slide {
+  position: relative;
+}
+
+.slider.slick-slider .slick-arrow {
+  width: 20px;
+  height: 50px;
+  position: absolute;
+  top: 30%;
+  z-index: 10;
+  font-size: 0;
+}
+
+.slider.slick-slider .slick-arrow.slick-prev {
+  left: -90px;
+  background: url("../img/promotions/sl-arrow_l.svg") 0 0/100% no-repeat;
+}
+
+.slider.slick-slider .slick-arrow.slick-next {
+  right: -90px;
+  background: url("../img/promotions/sl-arrow_r.svg") 0 0/100% no-repeat;
+}
+
+.slider.slick-slider .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.slider.slick-slider .slick-dots li {
+  list-style: none;
+  margin: 0px 10px;
+}
+
+.slider.slick-slider .slick-dots li button {
+  font-size: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid #f5deb3;
+}
+
+.slider.slick-slider .slick-dots li.slick-active button {
+  background-color: #f5deb3;
+}
+
 ._swiper {
   overflow: hidden;
 }
@@ -794,16 +872,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   cursor: pointer;
 }
 
-._no-webp .lg-outer .lg-has-vimeo .lg-video-play{
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 0 transparent; }
+.lg-outer .lg-has-vimeo .lg-video-play {
+  background: url("../img/vimeo-play.png") no-repeat scroll 0 0 transparent;
+}
 
-._no-webp .lg-outer .lg-has-vimeo:hover .lg-video-play{
-  background: url("../img/vimeo-play.png") no-repeat scroll 0 -58px transparent; }
-
-._no-webp .lg-outer .lg-has-html5 .lg-video-play{
-  background: transparent url("../img/video-play.png") no-repeat scroll 0 0; }
+.lg-outer .lg-has-vimeo:hover .lg-video-play {
+  background: url("../img/vimeo-play.png") no-repeat scroll 0 -58px transparent;
+}
 
 .lg-outer .lg-has-html5 .lg-video-play {
+  background: transparent url("../img/video-play.png") no-repeat scroll 0 0;
   height: 64px;
   margin-left: -32px;
   margin-top: -32px;
@@ -815,11 +893,13 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item.lg-complete .lg-object 
   opacity: 1;
 }
 
-._no-webp .lg-outer .lg-has-youtube .lg-video-play{
-  background: url("../img/youtube-play.png") no-repeat scroll 0 0 transparent; }
+.lg-outer .lg-has-youtube .lg-video-play {
+  background: url("../img/youtube-play.png") no-repeat scroll 0 0 transparent;
+}
 
-._no-webp .lg-outer .lg-has-youtube:hover .lg-video-play{
-  background: url("../img/youtube-play.png") no-repeat scroll 0 -60px transparent; }
+.lg-outer .lg-has-youtube:hover .lg-video-play {
+  background: url("../img/youtube-play.png") no-repeat scroll 0 -60px transparent;
+}
 
 .lg-outer .lg-video-object {
   width: 100% !important;
@@ -1749,10 +1829,8 @@ body {
      object-fit: cover;
 }
 
-._no-webp .main-screen__header{
-  background: url("../img/main-screen/rsz_brush.png") center/100% no-repeat; }
-
 .main-screen__header {
+  background: url("../img/main-screen/rsz_brush.png") center/100% no-repeat;
   height: 190px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1770,10 +1848,8 @@ body {
   font-weight: bold;
 }
 
-._no-webp .main-screen__subheader{
-  background: url("../img/main-screen/rsz_brush.png") center/100% no-repeat; }
-
 .main-screen__subheader {
+  background: url("../img/main-screen/rsz_brush.png") center/100% no-repeat;
   height: 190px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2000,12 +2076,10 @@ body {
   color: #e93249;
 }
 
-._no-webp .delivery{
-  background: url("../img/delivery/bg.png") center/cover no-repeat fixed; }
-
 .delivery {
   padding: 100px 0;
   height: 700px;
+  background: url("../img/delivery/bg.png") center/cover no-repeat fixed;
 }
 
 .delivery__body {
@@ -2292,6 +2366,13 @@ body {
     right: -30px;
     top: 50%;
     background-color: #fff;
+  }
+}
+
+@media (max-width: 850px) {
+  .slider.slick-slider .slick-arrow {
+    width: 0px;
+    height: 0px;
   }
 }
 
@@ -2600,12 +2681,10 @@ body {
     font-size: 13px;
   }
 
-  ._no-webp .delivery{
-    background: url("../img/delivery/bg.png") center/cover no-repeat scroll; }
-
   .delivery {
     padding: 50px 0;
     height: 600px;
+    background: url("../img/delivery/bg.png") center/cover no-repeat scroll;
   }
 
   .slider__icon {
@@ -2634,25 +2713,4 @@ body {
   .main-screen__subheader .main-screen__text-2 {
     font-size: 16px;
   }
-}
-
-._webp .lg-outer .lg-has-vimeo .lg-video-play{ background: url(../img/vimeo-play.webp) no-repeat scroll 0 0 transparent; }
-
-._webp .lg-outer .lg-has-vimeo:hover .lg-video-play{ background: url(../img/vimeo-play.webp) no-repeat scroll 0 -58px transparent; }
-
-._webp .lg-outer .lg-has-html5 .lg-video-play{ background: transparent url(../img/video-play.webp) no-repeat scroll 0 0; }
-
-._webp .lg-outer .lg-has-youtube .lg-video-play{ background: url(../img/youtube-play.webp) no-repeat scroll 0 0 transparent; }
-
-._webp .lg-outer .lg-has-youtube:hover .lg-video-play{ background: url(../img/youtube-play.webp) no-repeat scroll 0 -60px transparent; }
-
-._webp .main-screen__header{ background: url(../img/main-screen/rsz_brush.webp) center/100% no-repeat; }
-
-._webp .main-screen__subheader{ background: url(../img/main-screen/rsz_brush.webp) center/100% no-repeat; }
-
-._webp .delivery{ background: url(../img/delivery/bg.webp) center/cover no-repeat fixed; }
-
-@media (max-width: 479.98px){
-
-  ._webp .delivery{ background: url(../img/delivery/bg.webp) center/cover no-repeat scroll; }
 }

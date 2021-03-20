@@ -66,7 +66,7 @@ function html() {
 	return src(path.src.html, {})
 		.pipe(plumber())
 		.pipe(fileinclude())
-		.pipe(webphtml())
+		// .pipe(webphtml())
 		.pipe(dest(path.build.html))
 		.pipe(browsersync.stream());
 }
@@ -86,12 +86,12 @@ function css() {
 				cascade: true
 			})
 		)
-		.pipe(webpcss(
-			{
-				webpClass: "._webp",
-				noWebpClass: "._no-webp"
-			}
-		))
+		// .pipe(webpcss(
+		// 	{
+		// 		webpClass: "._webp",
+		// 		noWebpClass: "._no-webp"
+		// 	}
+		// ))
 		.pipe(dest(path.build.css))
 		.pipe(clean_css())
 		.pipe(
@@ -121,30 +121,37 @@ function images() {
 	return src(path.src.images)
 		.pipe(newer(path.build.images))
 		.pipe(
-			imagemin([
-				webp({
-					quality: 100
-				})
-			])
+			imagemin(
+				// [
+				// 	webp({
+				// 		quality: 75
+				// 	})
+				// ]
+			)
 		)
-		.pipe(
-			rename({
-				extname: ".webp"
-			})
-		)
+		// .pipe(
+		// 	rename({
+		// 		extname: ".webp"
+		// 	})
+		// )
 		.pipe(dest(path.build.images))
+
 		.pipe(src(path.src.images))
 		.pipe(newer(path.build.images))
-		.pipe(
-			imagemin({
-				progressive: true,
-				svgoPlugins: [{ removeViewBox: false }],
-				interlaced: true,
-				optimizationLevel: 3 // 0 to 7
+		.pipe(imagemin([
+			imagemin.gifsicle({interlaced: true}),
+			imagemin.mozjpeg({quality: 75, progressive: true}),
+			imagemin.optipng({optimizationLevel: 5}), // 0 to 7?
+			imagemin.svgo({
+				plugins: [
+					{removeViewBox: true},
+					{cleanupIDs: false}
+				]
 			})
-		)
+		]))
 		.pipe(dest(path.build.images))
 }
+
 function favicon() {
 	return src(path.src.favicon)
 		.pipe(plumber())
