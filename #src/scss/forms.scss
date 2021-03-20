@@ -14,12 +14,6 @@
 	font-size: 13px;
 	letter-spacing: 0.67px;
 
-	// @media (max-width: $md4+px) {
-	// 	padding: 0px 30px;
-	// 	height: 40px;
-	// 	line-height: 40px;
-	// }
-
 	position: relative;
 	&:after {
 		// анимация
@@ -92,12 +86,6 @@
 		z-index: 1;
 	}
 	&:hover {
-		&.btn_y {
-			// color: #fff;
-		}
-		// &.btn_b{
-		//     color: #fff;
-		// }
 		&:after {
 			transform: scale(1);
 		}
