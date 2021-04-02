@@ -382,6 +382,7 @@ body {
 
 		padding: 0px 0px 60% 0px;
 		position: relative;
+		background: url("../img/icons/loading.gif") center / 50px no-repeat;
 		img {
 			position: absolute;
 			width: 100%;
@@ -507,6 +508,7 @@ body {
 
 	padding: 0px 0px 50% 0px;
 	position: relative;
+	background: url("../img/icons/loading.gif") center / 50px no-repeat;
 	img {
 		position: absolute;
 		width: 100%;
@@ -561,6 +563,7 @@ body {
 
 	padding: 0px 0px 120% 0px;
 	position: relative;
+	background: url("../img/icons/loading.gif") center / 50px no-repeat;
 	img {
 		position: absolute;
 		width: 100%;
@@ -632,6 +635,17 @@ body {
 	}
 }
 .address__map {
+	padding: 0px 640px 340px 0px;
+	position: relative;
+	background: url("../img/icons/loading.gif") center / 50px no-repeat;
+	iframe {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
 	@media (max-width: 1250px) {
 		iframe {
 			width: 500px;

@@ -1956,6 +1956,7 @@ body {
   overflow: hidden;
   padding: 0px 0px 60% 0px;
   position: relative;
+  background: url("../img/icons/loading.gif") center/50px no-repeat;
 }
 
 .portfolio__item img {
@@ -2065,6 +2066,7 @@ body {
   margin: 0px 0 30px 0;
   padding: 0px 0px 50% 0px;
   position: relative;
+  background: url("../img/icons/loading.gif") center/50px no-repeat;
 }
 
 .slider__icon img {
@@ -2110,6 +2112,7 @@ body {
   margin: 0px 0px 30px 0px;
   padding: 0px 0px 120% 0px;
   position: relative;
+  background: url("../img/icons/loading.gif") center/50px no-repeat;
 }
 
 .main-menu__image:last-child {
@@ -2169,6 +2172,20 @@ body {
 
 .address__text:last-child {
   margin: 0;
+}
+
+.address__map {
+  padding: 0px 640px 340px 0px;
+  position: relative;
+  background: url("../img/icons/loading.gif") center/50px no-repeat;
+}
+
+.address__map iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 @media (min-width: 768px) {
