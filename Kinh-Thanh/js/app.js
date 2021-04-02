@@ -210,7 +210,6 @@ function gallery_init() {
 const lazyImages = document.querySelectorAll('img[data-src],source[data-srcset]');
 const loadMapBlock = document.querySelector('._load-map');
 const windowHeight = document.documentElement.clientHeight;
-const loadMoreBlock = document.querySelector('._load-more');
 
 let lazyImagesPositions = [];
 if (lazyImages.length > 0) {
@@ -223,7 +222,6 @@ if (lazyImages.length > 0) {
 }
 
 window.addEventListener("scroll", lazyScroll);
-
 function lazyScroll() {
 	if (document.querySelectorAll('img[data-src],source[data-srcset]').length > 0) {
 		lazyScrollCheck();
