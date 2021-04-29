@@ -1,6 +1,3 @@
-"use strict"
-
-
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -204,61 +201,4 @@ function gallery_init() {
 	}
 }
 
-//=================
-// lazy loading
-// const lazyImages = document.querySelectorAll('img[data-src],source[data-srcset]');
-// const loadMapBlock = document.querySelector('._load-map');
-// const windowHeight = document.documentElement.clientHeight;
 
-// let lazyImagesPositions = [];
-// if (lazyImages.length > 0) {
-// 	lazyImages.forEach(img => {
-// 		if (img.dataset.src || img.dataset.srcset) {
-// 			lazyImagesPositions.push(img.getBoundingClientRect().top + pageYOffset);
-// 			lazyScrollCheck();
-// 		}
-// 	});
-// }
-
-// window.addEventListener("scroll", lazyScroll);
-// function lazyScroll() {
-// 	if (document.querySelectorAll('img[data-src],source[data-srcset]').length > 0) {
-// 		lazyScrollCheck();
-// 	}
-// 	if (!loadMapBlock.classList.contains('_loaded')) {
-// 		getMap();
-// 	}
-// 	if (!loadMoreBlock.classList.contains('_loading')) {
-// 		loadMore();
-// 	}
-// }
-
-// function lazyScrollCheck() {
-// 	let imgIndex = lazyImagesPositions.findIndex(
-// 		item => pageYOffset > item - windowHeight
-// 	);
-// 	if (imgIndex >= 0) {
-// 		if (lazyImages[imgIndex].dataset.src) {
-// 			lazyImages[imgIndex].src = lazyImages[imgIndex].dataset.src;
-// 			lazyImages[imgIndex].removeAttribute('data-src');
-// 		} else if (lazyImages[imgIndex].dataset.srcset) {
-// 			lazyImages[imgIndex].srcset = lazyImages[imgIndex].dataset.srcset;
-// 			lazyImages[imgIndex].removeAttribute('data-srcset');
-// 		}
-// 		delete lazyImagesPositions[imgIndex];
-// 	}
-// }
-
-// function getMap() {
-// 	const loadMapBlockPos = loadMapBlock.getBoundingClientRect().top + pageYOffset;
-// 	if (pageYOffset > loadMapBlockPos - windowHeight) {
-// 		const loadMapUrl = loadMapBlock.dataset.map;
-// 		if (loadMapUrl) {
-// 			loadMapBlock.insertAdjacentHTML(
-// 				"beforeend",
-// 				`<iframe src="${loadMapUrl}" style="border:0;" allowfullscreen="" loading="lazy"></iframe>`
-// 			);
-// 			loadMapBlock.classList.add('_loaded');
-// 		}
-// 	}
-// }
