@@ -2175,7 +2175,7 @@ body {
 }
 
 .address__map {
-  padding: 0px 640px 340px 0px;
+  padding: 0px 600px 340px 0px;
   position: relative;
   background: url("../img/icons/loading.gif") center/50px no-repeat;
 }
