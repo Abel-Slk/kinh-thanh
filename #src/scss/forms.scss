@@ -7,8 +7,10 @@
 	padding: 0px 42px;
 
 	box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
+	
 	border-radius: 28px;
 	overflow: hidden; // при анимации :after скроет углы
+	-webkit-mask-image: -webkit-radial-gradient(white, black); // fix for Safari
 
 	text-transform: uppercase;
 	font-size: 13px;
