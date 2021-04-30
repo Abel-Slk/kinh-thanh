@@ -169,22 +169,6 @@ for (let index = 0; index < filterItems.length; index++) {
 }
 
 //=================
-// Maps 
-// function showYaMaps() {
-// 	let ifr = document.createElement("iframe");
-// 	ifr.src = "https://yandex.ru/map-widget/v1/?um=constructor%3A6bbfd63bba83566668f19b460cc11cc9ea50d891633d1bae28e7cc69b20d4a02&amp;source=constructor";
-// 	ifr.width = "600";
-// 	ifr.height = "340";
-// 	ifr.frameborder = "0";
-
-// 	document.getElementById("YaMaps").appendChild(ifr);
-// }
-// setTimeout(function () {
-// 	showYaMaps();
-// }, 3000);
-
-
-//=================
 //Gallery
 let gallery = document.querySelectorAll('._gallery');
 if (gallery) {
@@ -201,4 +185,22 @@ function gallery_init() {
 	}
 }
 
+//========================================================================================================================================================
 
+let image = document.querySelector('.main-screen__image');
+
+function adaptive_function() {
+	let w = $(window).outerWidth();
+	let h = $(window).outerHeight();
+
+	if(w < 600) {
+		image.dataset.src = "img/main-screen/main_bg_mob.jpg";
+	}
+	else{
+		image.dataset.src = "img/main-screen/main_bg.jpg";
+	}
+}
+adaptive_function();
+$(window).resize(function(event) {
+	adaptive_function();
+});

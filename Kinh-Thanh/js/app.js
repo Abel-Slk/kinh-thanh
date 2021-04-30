@@ -202,7 +202,25 @@ function gallery_init() {
 	}
 }
 
+//========================================================================================================================================================
 
+let image = document.querySelector('.main-screen__image');
+
+function adaptive_function() {
+	var w = $(window).outerWidth();
+	var h = $(window).outerHeight();
+
+	if(w < 600) {
+		image.dataset.src = "img/main-screen/main_bg_mob.jpg";
+	}
+	else{
+		image.dataset.src = "img/main-screen/main_bg.jpg";
+	}
+}
+adaptive_function();
+$(window).resize(function(event) {
+	adaptive_function();
+});
 
 if ($('.slider').length > 0) {
 	$('.slider').slick({
